@@ -1,0 +1,4 @@
+{
+	"port": 5000,
+	"db": "mongodb+srv://srikanth:srikanth7@cluster0-9nk8y.mongodb.net/test"
+}
