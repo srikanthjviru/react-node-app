@@ -16,6 +16,9 @@ const server = (async () => {
 		app.use(express.static(path.join(__dirname, "../../build/")));
 		app.use(PortalServe);
 		app.use("/api", Router);
+		app.get("/*", (req, res) => {
+			res.sendFile(path.join(__dirname, "../../build", "index.html"));
+		});
 		const port = process.env.PORT || config.get("port");
 		app.listen(port);
 		console.log(`Server is running on port : ${port}`);
