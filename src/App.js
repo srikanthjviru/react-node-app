@@ -1,13 +1,14 @@
 import logo from "./logo.svg";
 import "./App.css";
 import { useEffect } from "react";
+const config = process.env;
 function App() {
 	useEffect(() => {
 		callAPI();
 	}, []);
 	const callAPI = async () => {
 		console.log("API called!!");
-		const resj = await fetch("http://localhost:5000/api/test");
+		const resj = await fetch(`${config.REACT_APP_SERVER_URL}/test`);
 		const res = resj.json();
 		console.log("Res", res);
 	};
